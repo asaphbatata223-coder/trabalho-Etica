@@ -22,7 +22,32 @@
 .galeria img:hover {
   transform: scale(1.1);
 }
+   
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
 
+#intro h1 {
+  color: red;
+  font-size: 50px;
+  opacity: 0;
+  animation: aparecer 2s forwards;
+}
+
+@keyframes aparecer {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
    
 @keyframes entrada {
   from {
@@ -36,6 +61,9 @@
 }
   
   body {
+    <div id="intro">
+    <h1>MEU MEMORIAL</h1>
+    </div>
     animation: entrada 1s ease-out;
     font-family: Arial, sans-serif;
     background: #0f172a; 
@@ -137,6 +165,9 @@
 </div>
 
 <script>
+setTimeout(function() {
+document.getElementById("intro").style.display = "none";
+}, 2500);
 function abrir(secao) {
   var conteudos = document.getElementsByClassName("conteudo");
 
