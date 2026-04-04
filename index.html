@@ -10,108 +10,101 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #0f172a, #1e293b);
       color: #e2e8f0;
+      text-align: center;
     }
 
     header {
-      text-align: center;
       padding: 30px;
       background: #020617;
       font-size: 28px;
       font-weight: bold;
     }
 
-    section {
-      padding: 40px;
-      max-width: 800px;
+    .botoes {
+      margin: 30px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 10px;
+      background: #3b82f6;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2563eb;
+      transform: scale(1.1);
+    }
+
+    .conteudo {
+      display: none;
+      max-width: 600px;
       margin: auto;
-    }
-
-    h2 {
-      color: #38bdf8;
-      border-bottom: 2px solid #38bdf8;
-      padding-bottom: 5px;
-    }
-
-    .card {
       background: #1e293b;
       padding: 20px;
-      margin-top: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin-top: 20px;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      margin-top: 40px;
+    .ativo {
+      display: block;
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
-  ✨ Meu Memorial ✨
+  ✨ Meu Memorial Interativo ✨
 </header>
 
-<section>
-  <h2>👤 Sobre Mim</h2>
-  <div class="card">
-    <p>
-      Meu nome é [SEU NOME]. Minha vida é como um jogo, onde cada desafio é uma fase
-      e cada dificuldade me ajuda a evoluir. Aprendi que não desistir é essencial
-      para alcançar meus sonhos.
-    </p>
-  </div>
+<div class="botoes">
+  <button onclick="mostrar('carater')">🧠 Caráter</button>
+  <button onclick="mostrar('profissional')">💼 Profissional</button>
+  <button onclick="mostrar('familia')">👨‍👩‍👦 Família</button>
+</div>
 
-  <h2>🔥 Minha Jornada (Persistência)</h2>
-  <div class="card">
-    <p>
-      Assim como José do Egito, enfrentei momentos difíceis, mas continuei firme.
-      Aprendi que mesmo nas dificuldades devemos manter nossos valores e seguir em frente.
-      Cada erro foi um aprendizado e cada queda uma chance de levantar mais forte.
-    </p>
-  </div>
+<div id="carater" class="conteudo">
+  <h2>🧠 Caráter</h2>
+  <p>
+    Quero ser uma pessoa forte, honesta e persistente. Assim como José do Egito,
+    pretendo manter meus valores mesmo diante das dificuldades.
+  </p>
+</div>
 
-  <h2>🎯 Meus Objetivos</h2>
+<div id="profissional" class="conteudo">
+  <h2>💼 Profissional</h2>
+  <p>
+    Quero trabalhar com tecnologia, criando projetos e jogos que impactem pessoas
+    e mostrem minha criatividade.
+  </p>
+</div>
 
-  <div class="card">
-    <h3>🧠 Caráter</h3>
-    <p>
-      Quero ser uma pessoa honesta, determinada e que nunca desiste dos seus sonhos.
-    </p>
-  </div>
+<div id="familia" class="conteudo">
+  <h2>👨‍👩‍👦 Família</h2>
+  <p>
+    Quero construir uma família baseada em respeito e apoio, sendo alguém presente
+    e confiável.
+  </p>
+</div>
 
-  <div class="card">
-    <h3>💼 Profissional</h3>
-    <p>
-      Quero me tornar um profissional de sucesso na área de tecnologia,
-      criando projetos e jogos que impactem as pessoas.
-    </p>
-  </div>
+<script>
+  function mostrar(id) {
+    let conteudos = document.querySelectorAll('.conteudo');
 
-  <div class="card">
-    <h3>👨‍👩‍👦 Família</h3>
-    <p>
-      Desejo construir uma família baseada em respeito, apoio e amor,
-      sendo alguém que inspira e ajuda os outros.
-    </p>
-  </div>
+    conteudos.forEach(div => {
+      div.classList.remove('ativo');
+    });
 
-  <h2>🌌 Conclusão</h2>
-  <div class="card">
-    <p>
-      Meu futuro será construído com esforço, persistência e fé. Não importa os desafios,
-      continuarei avançando, sempre buscando ser melhor do que fui ontem.
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  Feito por mim 🚀
-</footer>
+    document.getElementById(id).classList.add('ativo');
+  }
+</script>
 
 </body>
 </html>
