@@ -5,6 +5,25 @@
   <title>Meu Memorial</title>
 
  <style>
+  .galeria {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.galeria img {
+  width: 120px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.1);
+}
+
+  
   body {
     font-family: Arial, sans-serif;
     background: #0f172a;
@@ -63,18 +82,36 @@
   <h2>Caráter</h2>
   <p>Quero ser uma pessoa honesta, forte e persistente, mantendo meus valores mesmo nas dificuldades,
      quero perder mais a vergonha e melhorar minha auto estima</p>
+
+  <div class="galeria">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/921/921347.png">
+  </div>
 </div>
 
 <div id="profissional" class="conteudo">
   <h2>Profissional</h2>
   <p>Quero trabalhar com tecnologia e criar projetos e jogos que impactem as pessoas,
     quero arrumar um emprego na empresa do meu tio de programação, passar no iff e terminar a faculdade</p>
+
+   <div class="galeria">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721265.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+  </div>
 </div>
 
 <div id="familia" class="conteudo">
   <h2>Família</h2>
   <p>Quero ajudar minha famila no que eu puder, visitar minha irmã mais veses,
      ver mais minha familia no Rio de Janeiro</p>
+
+   <div class="galeria">
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077035.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png">
+  </div>
 </div>
 
 <script>
