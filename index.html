@@ -22,6 +22,55 @@
 .galeria img:hover {
   transform: scale(1.1);
 }
+
+   #intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#intro h1 {
+  color: red;
+  font-size: 50px;
+  margin-bottom: 20px;
+  animation: aparecer 2s;
+}
+
+#intro button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: red;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#intro button:hover {
+  transform: scale(1.1);
+  background: darkred;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
    
 #intro {
   position: fixed;
@@ -122,6 +171,11 @@
 
 <header>✨ Meu Memorial ✨</header>
 
+  <div id="intro">
+  <h1>MEU MEMORIAL</h1>
+  <button onclick="entrar()">Entrar</button>
+  </div>
+  
 <div>
   <button onclick="abrir('carater')">Caráter</button>
   <button onclick="abrir('profissional')">Profissional</button>
@@ -178,6 +232,11 @@ function abrir(secao) {
   document.getElementById(secao).style.display = "block";
 }
 </script>
-
+<script>
+function entrar() {
+  document.getElementById("intro").style.display = "none";
+}
+</script>
+  
 </body>
 </html>
