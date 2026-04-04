@@ -6,104 +6,79 @@
 
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e2e8f0;
+      background: #0f172a;
+      color: white;
       text-align: center;
     }
 
     header {
-      padding: 30px;
-      background: #020617;
+      padding: 20px;
       font-size: 28px;
-      font-weight: bold;
-    }
-
-    .botoes {
-      margin: 30px;
+      background: #020617;
     }
 
     button {
       margin: 10px;
-      padding: 15px 25px;
+      padding: 15px;
+      font-size: 16px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #3b82f6;
       color: white;
       cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
     }
 
     button:hover {
       background: #2563eb;
-      transform: scale(1.1);
     }
 
     .conteudo {
       display: none;
-      max-width: 600px;
-      margin: auto;
+      margin: 20px auto;
+      width: 60%;
       background: #1e293b;
       padding: 20px;
-      border-radius: 12px;
-      margin-top: 20px;
+      border-radius: 10px;
     }
-
-    .ativo {
-      display: block;
-    }
-
   </style>
 </head>
 
 <body>
 
-<header>
-  ✨ Meu Memorial Interativo ✨
-</header>
+<header>✨ Meu Memorial ✨</header>
 
-<div class="botoes">
-  <button onclick="mostrar('carater')">🧠 Caráter</button>
-  <button onclick="mostrar('profissional')">💼 Profissional</button>
-  <button onclick="mostrar('familia')">👨‍👩‍👦 Família</button>
+<div>
+  <button onclick="abrir('carater')">Caráter</button>
+  <button onclick="abrir('profissional')">Profissional</button>
+  <button onclick="abrir('familia')">Família</button>
 </div>
 
 <div id="carater" class="conteudo">
-  <h2>🧠 Caráter</h2>
-  <p>
-    Quero ser uma pessoa forte, honesta e persistente. Assim como José do Egito,
-    pretendo manter meus valores mesmo diante das dificuldades.
-  </p>
+  <h2>Caráter</h2>
+  <p>Quero ser uma pessoa honesta, forte e persistente, mantendo meus valores mesmo nas dificuldades.</p>
 </div>
 
 <div id="profissional" class="conteudo">
-  <h2>💼 Profissional</h2>
-  <p>
-    Quero trabalhar com tecnologia, criando projetos e jogos que impactem pessoas
-    e mostrem minha criatividade.
-  </p>
+  <h2>Profissional</h2>
+  <p>Quero trabalhar com tecnologia e criar projetos e jogos que impactem as pessoas.</p>
 </div>
 
 <div id="familia" class="conteudo">
-  <h2>👨‍👩‍👦 Família</h2>
-  <p>
-    Quero construir uma família baseada em respeito e apoio, sendo alguém presente
-    e confiável.
-  </p>
+  <h2>Família</h2>
+  <p>Quero construir uma família baseada em respeito, apoio e união.</p>
 </div>
 
 <script>
-  function mostrar(id) {
-    let conteudos = document.querySelectorAll('.conteudo');
+function abrir(secao) {
+  var conteudos = document.getElementsByClassName("conteudo");
 
-    conteudos.forEach(div => {
-      div.classList.remove('ativo');
-    });
-
-    document.getElementById(id).classList.add('ativo');
+  for (var i = 0; i < conteudos.length; i++) {
+    conteudos[i].style.display = "none";
   }
+
+  document.getElementById(secao).style.display = "block";
+}
 </script>
 
 </body>
