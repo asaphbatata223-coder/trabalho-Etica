@@ -22,6 +22,37 @@
 .galeria img:hover {
   transform: scale(1.1);
 }
+   #capa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: 1s;
+}
+
+#capa h1 {
+  font-size: 40px;
+}
+
+#capa p {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* ANIMAÇÃO DE ABRIR */
+.abrindo {
+  transform: rotateY(90deg);
+  opacity: 0;
+}
 
 #intro {
   position: fixed;
@@ -121,7 +152,14 @@
 <body>
 
 <header>✨ Meu Memorial ✨</header>
+  
+<div id="capa" onclick="abrirAlbum()">
+  <h1>📖 Meu Memorial</h1>
+  <p>Clique para abrir</p>
+</div>
 
+<div id="site" style="display: none;">
+  
 <div>
   <button onclick="abrir('carater')">Caráter</button>
   <button onclick="abrir('profissional')">Profissional</button>
@@ -162,8 +200,8 @@
     <img src="https://static.vecteezy.com/ti/vetor-gratis/p1/21080593-icone-amor-familia-relacionado-para-familia-simbolo-glifo-estilo-simples-projeto-editavel-simples-ilustracao-vetor.jpg">
     <img src="https://i.pinimg.com/736x/44/7b/b0/447bb0320d33547b4ad53fc8e2c3c41c.jpg">
   </div>
+ </div>
 </div>
-
 <script>
 setTimeout(function() {
 document.getElementById("intro").style.display = "none";
@@ -176,6 +214,19 @@ function abrir(secao) {
   }
 
   document.getElementById(secao).style.display = "block";
+}
+</script>
+  
+<script>
+function abrirAlbum() {
+  let capa = document.getElementById("capa");
+
+  capa.classList.add("abrindo");
+
+  setTimeout(() => {
+    capa.style.display = "none";
+    document.getElementById("site").style.display = "block";
+  }, 800);
 }
 </script>
   
